@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_result"
+    tools:context="com.ninekone.liquidsmoke.activities.ResultActivity">
+
+    <RelativeLayout android:id="@+id/nico_result_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp">
+
+        <TextView android:text="Nicotine e-Juice"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView android:text="ml"
+            android:id="@+id/nico_result_unit"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/nico_result"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_toLeftOf="@id/nico_result_unit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/pg_result_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/nico_result_layout">
+
+        <TextView android:text="PG"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView android:text="ml"
+            android:id="@+id/pg_result_unit"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/pg_result"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_toLeftOf="@id/pg_result_unit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/vg_result_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/pg_result_layout">
+
+        <TextView android:text="VG"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView android:text="ml"
+            android:id="@+id/vg_result_unit"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/vg_result"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_toLeftOf="@id/vg_result_unit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/wvp_result_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/vg_result_layout">
+
+        <TextView android:text="Water/Vodka/PGA"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView android:text="ml"
+            android:id="@+id/wvp_result_unit"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/wvp_result"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_toLeftOf="@id/wvp_result_unit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/flav1_result_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/wvp_result_layout">
+
+        <TextView android:text="Flavor 1"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView android:text="ml"
+            android:id="@+id/flav1_result_unit"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/flav1_result"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_toLeftOf="@id/flav1_result_unit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/flav2_result_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/flav1_result_layout">
+
+        <TextView android:text="Flavor 2"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView android:text="ml"
+            android:id="@+id/flav2_result_unit"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/flav2_result"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:layout_toLeftOf="@id/flav2_result_unit"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
