@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -8,10 +8,15 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_calc" tools:context=".CalcActivity"
-    >
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/input">
 
     <RelativeLayout
-        android:id="@+id/amount_layout"
         android:layout_width="fill_parent"
         android:layout_height="40dp">
         <TextView android:text="Amount to make:"
@@ -48,8 +53,6 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/amount_layout"
-        android:id="@+id/nico_layout"
         >
 
         <TextView android:text="Target nicotine strength:"
@@ -81,8 +84,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="40dp"
-        android:id="@+id/pgvg_layout"
-        android:layout_below="@id/nico_layout">
+        >
 
         <TextView android:text="Target PG"
             android:id="@+id/PG"
@@ -117,10 +119,8 @@
     </RelativeLayout>
     
     <RelativeLayout
-        android:id="@+id/juice_layout"
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/pgvg_layout">
+        android:layout_height="40dp">
         
         <TextView android:text="Nicotine Strength e-Juice"
             android:layout_width="wrap_content"
@@ -149,10 +149,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:id="@+id/juice_pg_vgLayout"
-        android:layout_below="@id/juice_layout"
-        >
+        android:layout_height="40dp">
 
         <TextView android:text="\t\tPG"
             android:id="@+id/juice_PG_text"
@@ -188,9 +185,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:id="@+id/wvp_layout"
-        android:layout_below="@id/juice_pg_vgLayout">
+        android:layout_height="40dp">
 
         <TextView android:text="Alchohol"
             android:layout_width="wrap_content"
@@ -218,9 +213,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:id="@+id/flav1_layout"
-        android:layout_below="@id/wvp_layout">
+        android:layout_height="40dp">
 
         <TextView android:text="Flavor 1"
             android:layout_width="wrap_content"
@@ -264,10 +257,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:id="@+id/flav1_pg_vg_layout"
-        android:layout_below="@id/flav1_layout"
-        android:visibility="invisible">
+        android:layout_height="40dp">
 
         <TextView android:text="\t\tPG"
             android:layout_width="wrap_content"
@@ -302,91 +292,17 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="+"
+            android:on/>
+
+        </LinearLayout>
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:id="@+id/flav2_layout"
-        android:layout_below="@id/flav1_layout">
-
-        <TextView android:text="Flavor 2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/flav2_text"
-            android:textSize="15sp"
-            android:padding="10dp"/>
-
-        <TextView android:text="Zero PG/VG?"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/flav2_zero_pgvg_text"
-            android:layout_toRightOf="@id/flav2_text"
-            android:textSize="15sp"
-            android:padding="10dp"/>
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/flav2_zero_pgvg_check"
-            android:layout_toRightOf="@id/flav2_zero_pgvg_text"
-            android:checked="true"/>
-
-        <TextView android:text="%"
-            android:id="@+id/flav2_unit"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:textSize="15sp"
-            android:layout_alignParentRight="true"
-            android:gravity="bottom|left"
-            android:paddingBottom="10dp"/>
-
-        <EditText
-            android:id="@+id/flav2_value"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:layout_toLeftOf="@id/flav2_unit"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:id="@+id/flav2_pg_vg_layout"
-        android:layout_below="@id/flav1_layout"
-        android:visibility="invisible">
-
-        <TextView android:text="\t\tPG"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/flav2_pg_text"
-            android:textSize="15sp"
-            android:padding="10dp"/>
-
-        <Spinner
-            android:id="@+id/flav2_pg_value"
-            android:layout_toRightOf="@id/flav2_pg_text"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-        </Spinner>
-
-        <TextView android:text="\t\tVG"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/flav2_vg_text"
-            android:layout_toRightOf="@id/flav2_pg_value"
-            android:textSize="15sp"
-            android:padding="10dp"/>
-
-        <Spinner
-            android:id="@+id/flav2_vg_value"
-            android:layout_toRightOf="@id/flav2_vg_text"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-        </Spinner>
-
-    </RelativeLayout>
+        android:layout_height="wrap_content">
 
     <Button
         android:layout_width="fill_parent"
@@ -394,5 +310,7 @@
         android:layout_alignParentBottom="true"
         android:text="Calculate"
         android:onClick="calculate"/>
+        </LinearLayout>
+</LinearLayout>
 
-</RelativeLayout>
+

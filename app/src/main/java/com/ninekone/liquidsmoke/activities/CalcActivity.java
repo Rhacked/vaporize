@@ -1,6 +1,9 @@
 package com.ninekone.liquidsmoke.activities;
 
+import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -8,9 +11,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
@@ -29,7 +34,6 @@ public class CalcActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calc);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         initSpinners();
         initCheckboxes();
@@ -61,12 +65,8 @@ public class CalcActivity extends AppCompatActivity {
 
     public void initCheckboxes(){
         CheckBox flav1Checkbox = (CheckBox)findViewById(R.id.flav1_zero_pgvg_check);
-        CheckBox flav2Checkbox = (CheckBox)findViewById(R.id.flav2_zero_pgvg_check);
 
-        flav1Checkbox.setOnCheckedChangeListener(new CheckboxListener((RelativeLayout)findViewById(R.id.flav1_pg_vg_layout),
-                (RelativeLayout)findViewById(R.id.flav2_layout), (RelativeLayout)findViewById(R.id.flav1_layout)));
 
-        flav2Checkbox.setOnCheckedChangeListener(new CheckboxListener((RelativeLayout)findViewById(R.id.flav2_pg_vg_layout), null, (RelativeLayout)findViewById(R.id.flav2_layout)));
     }
 
 
@@ -78,8 +78,6 @@ public class CalcActivity extends AppCompatActivity {
         Spinner vgJuice = (Spinner)findViewById(R.id.juice_VG_value);
         Spinner flav1pg = (Spinner)findViewById(R.id.flav1_pg_value);
         Spinner flav1vg = (Spinner)findViewById(R.id.flav1_vg_value);
-        Spinner flav2pg = (Spinner)findViewById(R.id.flav2_pg_value);
-        Spinner flav2vg = (Spinner)findViewById(R.id.flav2_vg_value);
 
 
         /**
@@ -94,8 +92,6 @@ public class CalcActivity extends AppCompatActivity {
         vgJuice.setAdapter(spinnerAdapter);
         flav1pg.setAdapter(spinnerAdapter);
         flav1vg.setAdapter(spinnerAdapter);
-        flav2pg.setAdapter(spinnerAdapter);
-        flav2vg.setAdapter(spinnerAdapter);
 
         /**
          * Add OnItemSelectedListener to all spinners
@@ -107,8 +103,6 @@ public class CalcActivity extends AppCompatActivity {
         vgJuice.setOnItemSelectedListener(new SpinnerListener(pgJuice));
         flav1pg.setOnItemSelectedListener(new SpinnerListener(flav1vg));
         flav1vg.setOnItemSelectedListener(new SpinnerListener(flav1pg));
-        flav2pg.setOnItemSelectedListener(new SpinnerListener(flav2vg));
-        flav2vg.setOnItemSelectedListener(new SpinnerListener(flav2pg));
 
         /**
          * Set initial selection to 50/50
@@ -116,13 +110,11 @@ public class CalcActivity extends AppCompatActivity {
 
         pg.setSelection(5);
         pgJuice.setSelection(5);
-        flav1pg.setSelection(5);
-        flav2pg.setSelection(5);
+        flav1pg.setSelection(10);
     }
 
     public void calculate(View v){
         CheckBox flav1Check = (CheckBox)findViewById(R.id.flav1_zero_pgvg_check);
-        CheckBox flav2Check = (CheckBox)findViewById(R.id.flav2_zero_pgvg_check);
 
         int amountInt = 0;
         int tarStrengthInt = 0;
@@ -202,12 +194,6 @@ public class CalcActivity extends AppCompatActivity {
 
         }
 
-        try{
-            flav2 = Integer.parseInt(((EditText)findViewById(R.id.flav2_value)).getText().toString());
-            Log.d("Calculate", "Flavor2 %: "+flav2);
-        } catch (NumberFormatException e){
-
-        }
 
 
         if(!flav1Check.isChecked()){
@@ -225,22 +211,7 @@ public class CalcActivity extends AppCompatActivity {
 
             }
         }
-
-        if(!flav2Check.isChecked()){
-            try{
-                flav2PG = Integer.parseInt(((Spinner)findViewById(R.id.flav2_pg_value)).getSelectedItem().toString());
-                Log.d("Calculate", "Flavor2 PG: "+flav2PG);
-            } catch (NumberFormatException e){
-
-            }
-
-            try{
-                flav2VG = Integer.parseInt(((Spinner)findViewById(R.id.flav2_vg_value)).getSelectedItem().toString());
-                Log.d("Calculate", "Flavor2 VG: "+flav2VG);
-            } catch (NumberFormatException e){
-
-            }
-        }
+        
 
 
         Intent intent = new Intent(this, ResultActivity.class);
@@ -251,5 +222,16 @@ public class CalcActivity extends AppCompatActivity {
         intent.putExtra("flav1", Calculator.getMili(amountInt, flav1));
         intent.putExtra("flav2", Calculator.getMili(amountInt, flav2));
         startActivity(intent);
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public void addFlavor(View view){
+        RelativeLayout flavorTemplate = (RelativeLayout)findViewById(R.id.flavor_template);
+        flavorTemplate.setId(View.generateViewId());
+        Log.d("FlavorTemp", "Count children: "+flavorTemplate.getChildCount());
+        LinearLayout inputLayout = (LinearLayout)findViewById(R.id.input);
+        inputLayout.addView(flavorTemplate);
+
+
     }
 }

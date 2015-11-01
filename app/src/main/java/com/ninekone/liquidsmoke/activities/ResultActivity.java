@@ -21,7 +21,11 @@ public class ResultActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+
+
         Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
         double nico = intent.getDoubleExtra("nico", 0.0);
         double pg = intent.getDoubleExtra("pg", 0.0);
         double vg = intent.getDoubleExtra("vg", 0.0);
