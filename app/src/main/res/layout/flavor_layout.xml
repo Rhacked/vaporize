@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="40dp"
+    android:id="@+id/flavor_template">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp">
+
+        <TextView android:text="Flavor 1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/flav1_text"
+            android:textSize="15sp"
+            android:padding="10dp"/>
+
+        <TextView android:text="Zero PG/VG?"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/flav1_zero_pgvg_text"
+            android:layout_toRightOf="@id/flav1_text"
+            android:textSize="15sp"
+            android:padding="10dp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/flav1_zero_pgvg_check"
+            android:layout_toRightOf="@id/flav1_zero_pgvg_text"
+            android:checked="true"/>
+
+        <TextView android:text="%"
+            android:id="@+id/flav1_unit"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/flav1_value"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_toLeftOf="@id/flav1_unit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp">
+
+        <TextView android:text="\t\tPG"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/flav1_pg_text"
+            android:textSize="15sp"
+            android:padding="10dp"/>
+
+        <Spinner
+            android:id="@+id/flav1_pg_value"
+            android:layout_toRightOf="@id/flav1_pg_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </Spinner>
+
+        <TextView android:text="\t\tVG"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/flav1_vg_text"
+            android:layout_toRightOf="@id/flav1_pg_value"
+            android:textSize="15sp"
+            android:padding="10dp"/>
+
+        <Spinner
+            android:id="@+id/flav1_vg_value"
+            android:layout_toRightOf="@id/flav1_vg_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </Spinner>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

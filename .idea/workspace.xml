@@ -109,6 +109,19 @@
       <file leaf-file-name="CalcActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ninekone/liquidsmoke/activities/CalcActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+=======
+            <state vertical-scroll-proportion="-0.22395833">
+              <caret line="213" column="8" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ids.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/ids.xml">
+          <provider selected="true" editor-type-id="text-editor">
+>>>>>>> 7aad651f4218c8feb984ecdcbd3659f561e02eae
             <state vertical-scroll-proportion="0.0">
               <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
               <folding />
@@ -1025,8 +1038,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ninekone/liquidsmoke/activities/ResultActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.15562914">
           <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+=======
+        <state vertical-scroll-proportion="-0.22395833">
+          <caret line="213" column="8" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="8" />
+>>>>>>> 7aad651f4218c8feb984ecdcbd3659f561e02eae
           <folding />
         </state>
       </provider>
